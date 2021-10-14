@@ -23,31 +23,27 @@ public class Main {
         Criteria balanceGreaterThan20 = new CriteriaBalanceGreaterThan();
         Criteria balanceGreaterThan100 = new CriteriaBalanceGreaterThan();
         Criteria yearsGreaterThan10 = new CriteriaYearsGreaterThan();
-        Criteria and = new AndCriteria(balanceGreaterThan20, yearsGreaterThan10);
-        Criteria or = new OrCriteria(balanceGreaterThan100,yearsGreaterThan10);
+        Criteria premiumCustomers = new AndCriteria(balanceGreaterThan20, yearsGreaterThan10);
+        Criteria dedicatedCustomers = new OrCriteria(balanceGreaterThan100,yearsGreaterThan10);
 
-        System.out.println("Males: ");
+        System.out.println("Balance Greater Than 20,000: ");
         printPersons(balanceGreaterThan20.meetCriteria(allCustomers));
 
-        System.out.println("\nFemales: ");
-        printPersons(female.meetCriteria(persons));
+        System.out.println("\nYears Greater Than 10: ");
+        printPersons(yearsGreaterThan10.meetCriteria(allCustomers));
 
-        System.out.println("\nSingle Males: ");
-        printPersons(singleMale.meetCriteria(persons));
+        System.out.println("\nPremium Customers: ");
+        printPersons(premiumCustomers.meetCriteria(allCustomers));
 
-        System.out.println("\nSingle Or Females: ");
-        printPersons(singleOrFemale.meetCriteria(persons));
+        System.out.println("\nDedicated Customers: ");
+        printPersons(dedicatedCustomers.meetCriteria(allCustomers));
     }
 
     public static void printPersons(List<Customer> customers){
 
         for (Customer customer : customers) {
-            System.out.println("Person : [ Name : " + customer.getName() + ", Balance : " + customer.getBalance() + ", Number of Years : " + customer.getNumberOfYears() + " ]");
+            System.out.println("Customer : [ Name : " + customer.getName() + ", Balance : " + customer.getBalance() + ", Number of Years : " + customer.getNumberOfYears() + " ]");
         }
-    }
-
-
-
 
 }
 
