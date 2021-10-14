@@ -16,7 +16,6 @@ public class Main {
         allCustomers.add(new Customer(6, "Tom Jerry", 20_000_000.00, 2));
         allCustomers.add(new Customer(7, "Chris Ransome", 30_000.00, 7));
         allCustomers.add(new Customer(8, "Jane Mensah", 10_000.00, 15));
-
         allCustomers.add(new Customer(9, "Mike Brown", 20_000.00, 8));
         allCustomers.add(new Customer(10, "Yaw Hope", 10_000.00, 15));
 
