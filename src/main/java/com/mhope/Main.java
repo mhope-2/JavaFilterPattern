@@ -19,28 +19,31 @@ public class Main {
         allCustomers.add(new Customer(9, "Mike Brown", 20_000.00, 8));
         allCustomers.add(new Customer(10, "Yaw Hope", 10_000.00, 15));
 
-        Criteria balanceGreaterThan20 = new CriteriaBalanceGreaterThan();
-        Criteria balanceGreaterThan100 = new CriteriaBalanceGreaterThan();
-        Criteria yearsGreaterThan10 = new CriteriaYearsGreaterThan();
+        Criteria balanceGreaterThan20 = new CriteriaBalanceGreaterThan(allCustomers, 20_000.00);
+        Criteria balanceGreaterThan100 = new CriteriaBalanceGreaterThan(allCustomers, 100_000.00);
+        Criteria yearsGreaterThan10 = new CriteriaYearsGreaterThan(allCustomers, 10);
         Criteria premiumCustomers = new AndCriteria(balanceGreaterThan20, yearsGreaterThan10);
         Criteria dedicatedCustomers = new OrCriteria(balanceGreaterThan100,yearsGreaterThan10);
 
-        System.out.println("Balance Greater Than 20,000: ");
-        printPersons(balanceGreaterThan20.meetCriteria(allCustomers));
+        System.out.println("All customers");
+        printPersons(allCustomers);
 
-        System.out.println("\nYears Greater Than 10: ");
-        printPersons(yearsGreaterThan10.meetCriteria(allCustomers));
-
-        System.out.println("\nPremium Customers: ");
-        printPersons(premiumCustomers.meetCriteria(allCustomers));
-
-        System.out.println("\nDedicated Customers: ");
-        printPersons(dedicatedCustomers.meetCriteria(allCustomers));
+//        System.out.println("Balance Greater Than 20,000: ");
+//        printPersons(balanceGreaterThan20.meetCriteria(allCustomers));
+//
+//        System.out.println("\nYears Greater Than 10: ");
+//        printPersons(yearsGreaterThan10.meetCriteria(allCustomers));
+//
+//        System.out.println("\nPremium Customers: ");
+//        printPersons(premiumCustomers.meetCriteria(allCustomers));
+//
+//        System.out.println("\nDedicated Customers: ");
+//        printPersons(dedicatedCustomers.meetCriteria(allCustomers));
     }
 
-    public static void printPersons(List<Customer> customers){
+    public static void printPersons(List<Customer> allCustomers){
 
-        for (Customer customer : customers) {
+        for (Customer customer : allCustomers) {
             System.out.println("Customer : [ Name : " + customer.getName() + ", Balance : " + customer.getBalance() + ", Number of Years : " + customer.getNumberOfYears() + " ]");
         }
 

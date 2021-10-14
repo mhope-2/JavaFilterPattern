@@ -5,6 +5,14 @@ import java.util.List;
 
 public class CriteriaBalanceGreaterThan implements Criteria {
 
+    List<Customer> customers;
+    Double balance;
+
+    public CriteriaBalanceGreaterThan(List<Customer> customers, Double balance) {
+        this.customers = customers;
+        this.balance = balance;
+    }
+
     @Override
     public List<Customer> meetCriteria(List<Customer> customers, Double balance) {
        List<Customer> customerList = new ArrayList<>();

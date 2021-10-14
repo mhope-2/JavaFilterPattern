@@ -5,6 +5,14 @@ import java.util.List;
 
 public class CriteriaYearsGreaterThan implements Criteria{
 
+    List<Customer> customers;
+    int numberOfYears;
+
+    public CriteriaYearsGreaterThan(List<Customer> customers, int numberOfYears) {
+        this.customers = customers;
+        this.numberOfYears = numberOfYears;
+    }
+
     @Override
     public List<Customer> meetCriteria(List<Customer> customers, Double balance) {
         return null;
