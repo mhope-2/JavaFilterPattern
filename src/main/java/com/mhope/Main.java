@@ -21,23 +21,23 @@ public class Main {
 
         Criteria balanceGreaterThan20 = new CriteriaBalanceGreaterThan20();
         Criteria balanceGreaterThan100 = new CriteriaBalanceGreaterThan100();
-        Criteria yearsGreaterThan10 = new CriteriaYearsGreaterThan();
+        Criteria yearsGreaterThan10 = new CriteriaYearsGreaterThan10();
         Criteria andCriteria = new AndCriteria(yearsGreaterThan10, balanceGreaterThan20);
         Criteria orCriteria = new OrCriteria(andCriteria, balanceGreaterThan100);
 
         System.out.println("Customers with balance greater than 20,000.00: ");
         printCustomers(balanceGreaterThan20.meetCriteria(allCustomers));
         System.out.println();
-
-
+//
+//
         System.out.println("\nCustomers who have been with the institution for at least 10 years: ");
         printCustomers(yearsGreaterThan10.meetCriteria(allCustomers));
         System.out.println();
-
+//
         System.out.println("\nCustomers with at least 20,000.00 and at least 10 years: QUALIFIED");
         printCustomers(andCriteria.meetCriteria(allCustomers));
         System.out.println();
-
+//
         System.out.println("\nCustomers with at least 20,000.00 and at least 10 years OR Customers with at least 100,000.00: QUALIFIED");
         printCustomers(orCriteria.meetCriteria(allCustomers));
     }
