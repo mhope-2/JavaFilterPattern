@@ -8,16 +8,16 @@ public class CriteriaBalanceGreaterThan implements Criteria {
     List<Customer> customers;
     Double balance;
 
-    public CriteriaBalanceGreaterThan(List<Customer> customers, Double balance) {
-        this.customers = customers;
+    public CriteriaBalanceGreaterThan(Double balance) {
+
         this.balance = balance;
     }
 
     @Override
-    public List<Customer> meetCriteria(List<Customer> customers, Double balance) {
+    public List<Customer> meetCriteria(List<Customer> listOfCustomers, Double balance) {
        List<Customer> customerList = new ArrayList<>();
 
-       for (Customer customer : customers){
+       for (Customer customer : listOfCustomers){
            if(customer.getBalance() >= balance){
                customerList.add(customer);
            }

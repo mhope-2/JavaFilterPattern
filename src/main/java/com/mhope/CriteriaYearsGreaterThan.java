@@ -5,11 +5,10 @@ import java.util.List;
 
 public class CriteriaYearsGreaterThan implements Criteria{
 
-    List<Customer> customers;
+//    List<Customer> customers;
     int numberOfYears;
 
-    public CriteriaYearsGreaterThan(List<Customer> customers, int numberOfYears) {
-        this.customers = customers;
+    public CriteriaYearsGreaterThan(int numberOfYears) {
         this.numberOfYears = numberOfYears;
     }
 

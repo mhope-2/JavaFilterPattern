@@ -2,7 +2,7 @@ package com.mhope;
 
 import java.util.List;
 
-public class AndCriteria implements Criteria{
+public class AndCriteria implements Criteria {
     private Criteria firstCriteria;
     private Criteria secondCriteria;
 
@@ -11,15 +11,24 @@ public class AndCriteria implements Criteria{
         this.secondCriteria = secondCriteria;
     }
 
+    public Criteria getFirstCriteria() {
+        return this.firstCriteria;
+    }
+
+    public Criteria getSecondCriteria() {
+        return this.secondCriteria;
+    }
+
+
     @Override
     public List<Customer> meetCriteria(List<Customer> customers) {
-        List<Customer> firstCriteriaList = firstCriteria.meetCriteria(customers);
-
-        return secondCriteria.meetCriteria(firstCriteriaList);
+        List<Customer> firstCustomerList = this.firstCriteria.meetCriteria(customers);
+        return this.secondCriteria.meetCriteria(firstCustomerList);
     }
 
     @Override
     public List<Customer> meetCriteria(List<Customer> customers, Double balance) {
+
         return null;
     }
 
