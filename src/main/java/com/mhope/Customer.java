@@ -18,23 +18,13 @@ public class Customer {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public Double getBalance() {
         return balance;
     }
 
-    public void setBalance(Double balance) {
-        this.balance = balance;
-    }
 
     public int getNumberOfYears() {
         return numberOfYears;
     }
 
-    public void setNumberOfYears(int numberOfYears) {
-        this.numberOfYears = numberOfYears;
-    }
 }

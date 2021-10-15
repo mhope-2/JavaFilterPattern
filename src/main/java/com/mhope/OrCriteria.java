@@ -25,14 +25,4 @@ public class OrCriteria implements Criteria{
     }
 
 
-    @Override
-    public List<Customer> meetCriteria(List<Customer> customers, Double balance) {
-        return null;
-    }
-
-    @Override
-    public List<Customer> meetCriteria(List<Customer> customers, int numberOfYears) {
-        return null;
-    }
-
 }
